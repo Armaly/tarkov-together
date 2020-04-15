@@ -7,7 +7,7 @@ class MapSelection extends React.Component{
 
     render(){
         return(<div className="mapDropDown">
-            <DropdownButton id="map-drop-down" title="Map">
+            <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
                 {/* TODO: Later Dynamically pull names from DB/Bucket*/}
                 <Dropdown.Item eventKey="1">Customs</Dropdown.Item>
                 <Dropdown.Item eventKey="2">Shoreline</Dropdown.Item>
