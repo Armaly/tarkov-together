@@ -1,15 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Base from '../src/controllers/Base';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <h1>
           Tarkov Together Beta 0.0.1
-        </p>
+        </h1>
+      
       </header>
+      < Base />
     </div>
   );
 }
