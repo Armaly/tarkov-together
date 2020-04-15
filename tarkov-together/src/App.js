@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Base from '../src/controllers/Base';
 
 function App() {
   return (
@@ -9,7 +9,10 @@ function App() {
         <p>
           Tarkov Together Beta 0.0.1
         </p>
+        < Base />
       </header>
+
+     
     </div>
   );
 }
