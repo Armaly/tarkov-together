@@ -6,13 +6,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <h1>
           Tarkov Together Beta 0.0.1
-        </p>
-        < Base />
+        </h1>
+      
       </header>
-
-     
+      < Base />
     </div>
   );
 }
