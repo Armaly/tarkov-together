@@ -12,12 +12,12 @@ class MapSelection extends React.Component{
 
     render(){
         return(<div className="mapDropDown">
-            <DropdownButton variant= "secondary" id="map-drop-down" title="Map" onSelect={this.handleSelect(eventKey)}>
+            <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
                 {/* TODO: Later Dynamically pull names from DB/Bucket*/}
-                <Dropdown.Item location= "/test" eventKey="1">Customs</Dropdown.Item>
-                <Dropdown.Item eventKey="2">Shoreline</Dropdown.Item>
-                <Dropdown.Item eventKey="3">Woods</Dropdown.Item>
-                <Dropdown.Item eventKey="4">Interchange</Dropdown.Item>
+                <Dropdown.Item location= "/test" >Customs</Dropdown.Item>
+                <Dropdown.Item>Shoreline</Dropdown.Item>
+                <Dropdown.Item>Woods</Dropdown.Item>
+                <Dropdown.Item>Interchange</Dropdown.Item>
             </DropdownButton>
         </div>);
     }
