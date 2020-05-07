@@ -9,7 +9,7 @@ function App() {
         <h1>
           Tarkov Together Beta 0.0.1
         </h1>
-      
+        <hr></hr>
       </header>
       < Base />
     </div>

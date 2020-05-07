@@ -1,14 +1,14 @@
 import React from 'react';
-import MapSelection from '../components/MapSelection';
 import '../controllers/Base.css';
+import GameSelection from '../components/GameSelection';
+
 
 class Base extends React.Component{
     render(){
         
         return(<div className="Base">
-        <div className="mapSelection">
-            < MapSelection />
-        </div>
+      
+       <GameSelection />
 
     </div>);
     }
