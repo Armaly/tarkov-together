@@ -19,3 +19,5 @@ class MapDisplay extends React.Component{
         </>);
     }
 }
+
+export default MapDisplay;
