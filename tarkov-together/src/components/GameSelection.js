@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Tarkov from "../logos/tarkov-logo.jpg";
 import Valorant from "../logos/Valorant-logo.png";
-import MapDisplay from "../components/MapDisplay";
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class GameSelection extends React.Component{
 
@@ -17,12 +17,20 @@ class GameSelection extends React.Component{
                     <Card.Img src={Tarkov} />
                 </Card>
                </Link>
+
+               <Link to={{pathname:"/valorant", state:{game:"valorant"} }}> 
                 <Card>
                     <Card.Img src={Valorant} />
                 </Card>
+                </Link>
+
             </CardGroup>
         </>);
     }
 }
+
+GameSelection.propTypes = {
+    game: PropTypes.string
+};
 
 export default GameSelection;

@@ -2,7 +2,6 @@ import React from 'react';
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown';
 import "./MapSelection.css";
-import MapDisplay from './MapDisplay';
 import PropTypes from 'prop-types';
 
 class MapSelection extends React.Component{
@@ -13,7 +12,7 @@ class MapSelection extends React.Component{
 
     render(){
         console.log(this.props.game);
-        {/*Later dynamically get map names */}
+
         let tarkovMaps = (<> <div className="mapDropDown">
         <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
             {/* TODO: Later Dynamically pull names from DB/Bucket*/}
@@ -32,9 +31,9 @@ class MapSelection extends React.Component{
             <Dropdown.Item>Bind(Callouts)</Dropdown.Item>
         </DropdownButton></div></>);
 
-        if(this.props.game == "tarkov"){
+        if(this.props.game === "tarkov"){
             return tarkovMaps
-        }else if(this.props.game == "valorant"){
+        }else if(this.props.game === "valorant"){
             return valorantMaps;
         }else{
             return(<><div><p>"Error in map selection"</p></div></>)

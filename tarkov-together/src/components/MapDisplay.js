@@ -3,13 +3,19 @@ import Container from 'react-bootstrap/Container'
 import Customs from "../maps/tarkov/customs-nightshade.jpg";
 import MapSelection from '../components/MapSelection';
 import Image from 'react-bootstrap/Image'
+import PropTypes from 'prop-types';
 
 class MapDisplay extends React.Component{
 
+    constructor(props){
+        super(props);
+    }
     render(){
+        console.log(this.props);
+        console.log(this.props.props.game);
         return(<>
           <div className="mapSelection">
-            < MapSelection />
+            < MapSelection game={this.props.props.game}/>
         </div>
 
         <br></br>
@@ -19,5 +25,9 @@ class MapDisplay extends React.Component{
         </>);
     }
 }
+
+MapDisplay.propTypes = {
+    game: PropTypes.string
+};
 
 export default MapDisplay;
