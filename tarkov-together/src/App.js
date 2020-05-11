@@ -1,8 +1,21 @@
 import React from 'react';
 import './App.css';
 import Base from '../src/controllers/Base';
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
 function App() {
+  return(
+  <Router>
+    <Switch>
+      <Route path="/tarkov"></Route>
+      <Route path="/valorant"></Route>
+      <Route path="/">{Home }</Route>
+    </Switch>
+  </Router>
+  );
+}
+
+function Home(){
   return (
     <div className="App">
       <header className="App-header">
@@ -15,5 +28,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
