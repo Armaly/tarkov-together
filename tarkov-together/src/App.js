@@ -2,13 +2,14 @@ import React from 'react';
 import './App.css';
 import Base from '../src/controllers/Base';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import MapDisplay from '../src/components/MapDisplay';
 
 function App() {
   return(
   <Router>
     <Switch>
-      <Route path="/tarkov"></Route>
-      <Route path="/valorant"></Route>
+      <Route path="/tarkov"><MapDisplay components={{name:"tarkov"}} /></Route>
+      <Route path="/valorant"><MapDisplay components={{name:"valorant"}}/></Route>
       <Route path="/">{Home }</Route>
     </Switch>
   </Router>
