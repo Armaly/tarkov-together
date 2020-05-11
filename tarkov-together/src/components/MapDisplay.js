@@ -7,9 +7,6 @@ import PropTypes from 'prop-types';
 
 class MapDisplay extends React.Component{
 
-    constructor(props){
-        super(props);
-    }
     render(){
         console.log(this.props);
         console.log(this.props.props.game);

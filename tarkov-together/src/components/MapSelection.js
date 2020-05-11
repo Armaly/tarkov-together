@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown';
 import "./MapSelection.css";
@@ -13,7 +14,9 @@ class MapSelection extends React.Component{
     render(){
         console.log(this.props.game);
 
-        let tarkovMaps = (<> <div className="mapDropDown">
+        let tarkovMaps = (<> 
+         <Button href="/" variant="secondary">Home</Button>
+        <div className="mapDropDown">
         <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
             {/* TODO: Later Dynamically pull names from DB/Bucket*/}
             <Dropdown.Item location= "/test" >Customs</Dropdown.Item>
@@ -23,7 +26,9 @@ class MapSelection extends React.Component{
         </DropdownButton>
     </div> </>);
 
-        let valorantMaps = (<> <div className="mapDropDown">
+        let valorantMaps = (<> 
+          <Button href="/" variant="secondary">Home</Button>
+        <div className="mapDropDown">
         <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
             <Dropdown.Item>Bind(Blank)</Dropdown.Item>
             <Dropdown.Item>Bind(Callouts)</Dropdown.Item>
