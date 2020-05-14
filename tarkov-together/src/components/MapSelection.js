@@ -5,6 +5,22 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import "./MapSelection.css";
 import PropTypes from 'prop-types';
 
+//TODO: Dynamically call maps this is just a placeholder
+import Customs from "../maps/tarkov/customs-nightshade.jpg";
+import Factory from "../maps/tarkov/factory-3d.jpg";
+import FactoryCallOuts from "../maps/tarkov/factory-callouts.jpg";
+import Interchange from "../maps/tarkov/interchange-nightshade.jpg";
+import ReserveKeys from "../maps/tarkov/reserve-keys.png";
+import ReserveSpawns from "../maps/tarkov/reserve-spawns.jpg";
+import Shoreline from "../maps/tarkov/shoreline.jpeg";
+import Woods2D from "../maps/tarkov/woods-2d.png";
+
+import BindBlank from "../maps/valorant/bind-blank.jpg";
+import BindCallouts from "../maps/valorant/bind-callouts.jpg";
+import HavenBlank from "../maps/valorant/haven-blank.jpg";
+import HavenCallouts from "../maps/valorant/bind-callouts.jpg";
+import SplitCallouts from  "../maps/valorant/split-callouts.jpg";
+
 class MapSelection extends React.Component{
 
     handleSelect(eventKey){
@@ -13,11 +29,12 @@ class MapSelection extends React.Component{
         console.log(eventKey);
 
         if(this.props.game === "tarkov"){
-            const gameMaps = ["customs-nightshade.jpg",  "factory-3d.jpg", "factory-callouts.jpg", "interchange-nightshade.jpg", "reserve-keys.png", "reserve-spawns.jpg", "shoreline.jpg", "woods-2d.png"];
-            console.log("tarkov maps")
+            const gameMaps = [Customs, Factory, FactoryCallOuts, Interchange, ReserveKeys, ReserveSpawns, Shoreline, Woods2D];  
+            this.setState({currentMap: gameMaps[eventKey]});
+            this.forceUpdate();
         }else if(this.props.game === "valorant"){
-            const gameMaps = ["bind-blank.jpg", "bind-callouts.jpg", "haven-blank.jpg", "haven-callouts.jpg"];
-           console.log("valorant maps");
+            const gameMaps = [BindBlank, BindCallouts, HavenBlank, HavenCallouts, SplitCallouts];
+            this.setState({currentMap: gameMaps[eventKey]});
         }else{
             return(<><div><p>"Error in map selection"</p></div></>)
         }
@@ -30,14 +47,14 @@ class MapSelection extends React.Component{
         <div className="mapDropDown">
         <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
             {/* TODO: Later Dynamically pull names from DB/Bucket*/}
-            <Dropdown.Item onClick={()=>this.handleSelect(1)}>Customs(Nightshade)</Dropdown.Item>
-           <Dropdown.Item onClick={()=>this.handleSelect(2)}>Factory(3D)</Dropdown.Item> 
-           <Dropdown.Item onClick={()=>this.handleSelect(3)}>Factory(Callouts)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(4)}>Interchange(Nightshade)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(5)}>Reserve(Keys)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(6)}>Reserve(Spawns)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(7)}>Shoreline</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(8)}>Woods(2D)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(0)}>Customs(Nightshade)</Dropdown.Item>
+           <Dropdown.Item onClick={()=>this.handleSelect(1)}>Factory(3D)</Dropdown.Item> 
+           <Dropdown.Item onClick={()=>this.handleSelect(2)}>Factory(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(3)}>Interchange(Nightshade)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(4)}>Reserve(Keys)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(5)}>Reserve(Spawns)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(6)}>Shoreline</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(7)}>Woods(2D)</Dropdown.Item>
             
         </DropdownButton>
     </div> </>);
@@ -46,10 +63,11 @@ class MapSelection extends React.Component{
           <Button href="/" variant="secondary">Home</Button>
         <div className="mapDropDown">
         <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
-            <Dropdown.Item onClick={()=>this.handleSelect(1)}>Bind(Blank)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(2)}>Bind(Callouts)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(3)}>Haven(Blank)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(4)}> Haven(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(0)}>Bind(Blank)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(1)}>Bind(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(2)}>Haven(Blank)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(3)}> Haven(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(4)}> Split(Callouts)</Dropdown.Item>
         </DropdownButton></div></>);
 
         if(this.props.game === "tarkov"){
