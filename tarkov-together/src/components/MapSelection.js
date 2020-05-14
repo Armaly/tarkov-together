@@ -13,8 +13,10 @@ class MapSelection extends React.Component{
         console.log(eventKey);
 
         if(this.props.game === "tarkov"){
+            const gameMaps = ["customs-nightshade.jpg",  "factory-3d.jpg", "factory-callouts.jpg", "interchange-nightshade.jpg", "reserve-keys.png", "reserve-spawns.jpg", "shoreline.jpg", "woods-2d.png"];
             console.log("tarkov maps")
         }else if(this.props.game === "valorant"){
+            const gameMaps = ["bind-blank.jpg", "bind-callouts.jpg", "haven-blank.jpg", "haven-callouts.jpg"];
            console.log("valorant maps");
         }else{
             return(<><div><p>"Error in map selection"</p></div></>)
@@ -22,17 +24,20 @@ class MapSelection extends React.Component{
     }
 
     render(){
-        console.log(this.props.game);
 
         let tarkovMaps = (<> 
          <Button href="/" variant="secondary">Home</Button>
         <div className="mapDropDown">
         <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
             {/* TODO: Later Dynamically pull names from DB/Bucket*/}
-            <Dropdown.Item onClick={()=>this.handleSelect(1)}>Customs</Dropdown.Item>
-           <Dropdown.Item onClick={()=>this.handleSelect(2)}>Interchange</Dropdown.Item> 
-           <Dropdown.Item onClick={()=>this.handleSelect(3)}>Shoreline</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.handleSelect(4)}>Woods</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(1)}>Customs(Nightshade)</Dropdown.Item>
+           <Dropdown.Item onClick={()=>this.handleSelect(2)}>Factory(3D)</Dropdown.Item> 
+           <Dropdown.Item onClick={()=>this.handleSelect(3)}>Factory(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(4)}>Interchange(Nightshade)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(5)}>Reserve(Keys)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(6)}>Reserve(Spawns)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(7)}>Shoreline</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.handleSelect(8)}>Woods(2D)</Dropdown.Item>
             
         </DropdownButton>
     </div> </>);
