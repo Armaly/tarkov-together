@@ -8,8 +8,6 @@ import PropTypes from 'prop-types';
 class MapDisplay extends React.Component{
 
     render(){
-        console.log(this.props);
-        console.log(this.props.props.game);
         return(<>
           <div className="mapSelection">
             < MapSelection game={this.props.props.game}/>
