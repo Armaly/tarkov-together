@@ -5,6 +5,21 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import "./MapSelection.css";
 import PropTypes from 'prop-types';
 
+import Customs from "../maps/tarkov/customs-nightshade.jpg";
+import Factory from "../maps/tarkov/factory-3d.jpg";
+import FactoryCallOuts from "../maps/tarkov/factory-callouts.jpg";
+import Interchange from "../maps/tarkov/interchange-nightshade.jpg";
+import ReserveKeys from "../maps/tarkov/reserve-keys.png";
+import ReserveSpawns from "../maps/tarkov/reserve-spawns.jpg";
+import Shoreline from "../maps/tarkov/shoreline.jpeg";
+import Woods2D from "../maps/tarkov/woods-2d.png";
+
+import BindBlank from "../maps/valorant/bind-blank.jpg";
+import BindCallouts from "../maps/valorant/bind-callouts.jpg";
+import HavenBlank from "../maps/valorant/haven-blank.jpg";
+import HavenCallouts from "../maps/valorant/bind-callouts.jpg";
+import SplitCallouts from  "../maps/valorant/split-callouts.jpg";
+
 
 class MapSelection extends React.Component{
 
@@ -15,12 +30,16 @@ class MapSelection extends React.Component{
         }
     }
 
-
     componentDidMount(){
         this.setState({hi: "hello"});
     }
+
+    changeMap(map){
+        console.log(this.props);
+        this.props.updateMap(map);    
+    }
+
     render(){
-        var handleUpdate = this.props.handleUpdate;
 
         console.log(this.props);
 
@@ -29,14 +48,14 @@ class MapSelection extends React.Component{
         <div className="mapDropDown">
         <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
             {/* TODO: Later Dynamically pull names from DB/Bucket*/}
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(0)}>Customs(Nightshade)</Dropdown.Item>
-           <Dropdown.Item onClick={()=>this.props.handleUpdate(1)}>Factory(3D)</Dropdown.Item> 
-           <Dropdown.Item onClick={()=>this.props.handleUpdate(2)}>Factory(Callouts)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(3)}>Interchange(Nightshade)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(4)}>Reserve(Keys)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(5)}>Reserve(Spawns)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(6)}>Shoreline</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(7)}>Woods(2D)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(Customs)}>Customs(Nightshade)</Dropdown.Item>
+           <Dropdown.Item onClick={()=>this.changeMap(Factory)}>Factory(3D)</Dropdown.Item> 
+           <Dropdown.Item onClick={()=>this.changeMap(FactoryCallOuts)}>Factory(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(Interchange)}>Interchange(Nightshade)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(ReserveKeys)}>Reserve(Keys)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(ReserveSpawns)}>Reserve(Spawns)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(Shoreline)}>Shoreline</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(Woods2D)}>Woods(2D)</Dropdown.Item>
             
         </DropdownButton>
     </div> </>);
@@ -45,11 +64,11 @@ class MapSelection extends React.Component{
           <Button href="/" variant="secondary">Home</Button>
         <div className="mapDropDown">
         <DropdownButton variant= "secondary" id="map-drop-down" title="Map">
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(0)}>Bind(Blank)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(1)}>Bind(Callouts)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(2)}>Haven(Blank)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(3)}> Haven(Callouts)</Dropdown.Item>
-            <Dropdown.Item onClick={()=>this.props.handleUpdate(4)}> Split(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(BindBlank)}>Bind(Blank)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(BindCallouts)}>Bind(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(HavenBlank)}>Haven(Blank)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(HavenCallouts)}> Haven(Callouts)</Dropdown.Item>
+            <Dropdown.Item onClick={()=>this.changeMap(SplitCallouts)}> Split(Callouts)</Dropdown.Item>
         </DropdownButton></div></>);
 
         if(this.props.game === "tarkov"){
@@ -64,7 +83,7 @@ class MapSelection extends React.Component{
 
 MapSelection.propTypes = {
     game: PropTypes.string,
-    handleUpdate: PropTypes.func
+    updateMap: PropTypes.func
 };
 
 export default MapSelection;

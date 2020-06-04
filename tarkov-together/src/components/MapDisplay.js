@@ -26,7 +26,7 @@ class MapDisplay extends React.Component{
 
     constructor(props){
         super(props);
-        var handleUpdate = this.handleUpdate.bind(this);
+        this.updateMap = this.updateMap.bind(this);
         this.state ={
             currentMap: "here"
         }
@@ -40,6 +40,10 @@ class MapDisplay extends React.Component{
         }else if(this.props.props.game === "valorant"){
             this.setState({currentMap: SplitCallouts});
         }
+    }
+
+    updateMap(map){
+        this.setState({currentMap: map});
     }
 
     handleUpdate(eventKey){
@@ -59,10 +63,9 @@ class MapDisplay extends React.Component{
         }
     }
     render(){
-
         return(<>
           <div className="mapSelection">
-            < MapSelection game={this.props.props.game}/>
+            < MapSelection game={this.props.props.game} updateMap={this.updateMap}/>
         </div>
         
         <br></br>
